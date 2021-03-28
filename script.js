@@ -4,10 +4,13 @@ const loadingBgImg = document.querySelector('#loading_bg img')
 document.onreadystatechange = function () {
     if (document.readyState == "interactive" || document.readyState == "complete") {
 
-        loadingBg.style.transform = 'translateY(-100%)';
+        loadingBgImg.style.animation = 'scalezero 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards';
         setTimeout(() => {
-            loadingBgImg.style.animation = 'none';
-        }, 400);
+            loadingBg.style.transform = 'translateY(-100%)';
+            setTimeout(() => {
+                loadingBgImg.style.animation = 'none';
+            }, 400);
+        }, 300);
 
 
 

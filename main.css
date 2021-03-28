@@ -4,6 +4,12 @@
     } 100% {
         transform:scale(0.9);
     }
+} @keyframes scalezero {
+    0% {
+        transform:scale(1) rotate(0deg);
+    } 100% {
+        transform:scale(0) rotate(360deg);
+    }
 }
 
 #loading_bg {
@@ -18,11 +24,13 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    transition: transform 0.4s 0.2s ease;
+    transition: transform 0.4s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateY(0);
 } #loading_bg img {
     width: 24vh;
-    animation: loading_img 0.7s ease infinite alternate;
+    animation: loading_img 0.7s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate forwards;
+    transform: scale(1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 } #loading_bg p {
     color: white;
     font-size: 1.5rem;
@@ -347,6 +355,9 @@ details:focus {
     display: flex;
     flex-flow: column;
     justify-content: center;
+} #data_section article img {
+    margin: 0 1rem 1rem 1rem;
+    height: 4rem;
 }
 
 .real_time {
@@ -472,6 +483,7 @@ footer {
 
 } #parceria_section a {
     width: 40%;
+    max-width: 15rem;
     height: 7rem;
     display: block;
     background: #EEF;
@@ -719,5 +731,14 @@ footer {
 
     #dogbg {
         width:30%;
+    }
+
+    #parceria_section a {
+        height: 10rem;
+        width: 16rem;
+        margin: 2rem;
+    } #parceria_section > div {
+        margin: 0 auto;
+        justify-content: center;
     }
 }

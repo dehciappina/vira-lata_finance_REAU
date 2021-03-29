@@ -9,7 +9,7 @@ document.onreadystatechange = function () {
             loadingBg.style.transform = 'translateY(-100%)';
             setTimeout(() => {
                 loadingBgImg.style.animation = 'none';
-            }, 400);
+            }, 600);
         }, 300);
 
 

@@ -26,6 +26,9 @@
     align-items: center;
     transition: transform 0.5s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateY(0);
+    background-image: url(assets/bg.jpg);
+    background-size: 55rem;
+    background-position: center;
 } #loading_bg img {
     width: 24vh;
     animation: loading_img 0.7s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate forwards;
@@ -55,7 +58,7 @@ body, html {
 
     --color-2: #3beaff;
     --color-2-1:#2bc2e0;
-    --color-2-2: #005a9a;
+    --color-2-2: #0079AD;
     --color-2-3: #004958;
     --color-2-4: #9df5ff;
 
@@ -71,7 +74,7 @@ body, html {
 
 html {
     font-size:16px;
-    font-size: clamp(0.6px, 1.8vh, 5vw);
+    font-size: clamp(0.6px, calc(1vh + 6px), 5vw);
     scroll-behavior: smooth;
 }
 
@@ -93,7 +96,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 h3 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 600;
 } h4 {
     text-align: center;
@@ -111,13 +114,14 @@ header {
     position: fixed;
     top: 0;
     background-color: white;
-    box-shadow: 0 1rem 4rem -1rem white;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    transform: translateY(-100%);
+    transform: translateY(-150%);
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 9;
+} header .telegrambt {
+    background-color:var(--telegram);
 }
 
 #intro {
@@ -130,14 +134,20 @@ header {
     background: linear-gradient(0deg, var(--color-1), transparent 38%);
     z-index: 1;
     overflow: hidden;
+    background-image: url(assets/bg.jpg);
+    background-size: 177%;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    box-shadow: inset 0 31rem 16rem -22rem var(--telegram-2);
 } #businessdoggo {
     width: 80%;
     max-width: 26rem;
     margin: 0 auto;
 } h1 {
-    font-size: 3.8rem;
+    font-size: 4rem;
     font-weight: 600;
-    line-height: 3.8rem;
+    line-height: 4.2rem;
     padding: 0 10vw;
 } #intro h2 {
     font-size: 1.2rem;
@@ -146,7 +156,7 @@ header {
     letter-spacing: 1px;
     max-width: calc(14rem + 30vw);
 } #intro h2 strong {
-    font-weight: 600;
+    font-weight: 500;
 } #intro article {
     height: 100%;
     display: flex;
@@ -156,7 +166,7 @@ header {
     margin: 0 auto;
     height: 3rem;
     font-size: 1.3rem;
-    background: var(--telegram);
+    background: var(--color-0);
     font-weight: 400;
 } .telegrambt p {
     color: var(--telegram-2);
@@ -182,6 +192,7 @@ header {
     margin: 0 auto;
     max-width: 40rem;
     animation:rotating_circle 60s linear infinite;
+    filter: drop-shadow(0 0 60px var(--color-3));
 }
 
 
@@ -260,7 +271,7 @@ header {
 }
 
 .filled {
-    background-color: var(--color-2);
+    background-color: var(--color-1);
     color: var(--color-2-2);
 }
 
@@ -291,9 +302,12 @@ header {
     font-size: 5vw;
 } .highlight_txt2 {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 500;
-    margin: 2rem;
+    margin: 2rem 0;
+} .highlight_txt2 strong {
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
 #proposta summary {
@@ -308,7 +322,7 @@ header {
     transform: scale(1.05);
 } #proposta .description {
     text-align: left;
-    background: linear-gradient(var(--color-0), var(--color-2));
+    background: linear-gradient(0deg, var(--color-0), #CEE);
     width: 100%;
     margin: -1rem 0 0 0;
     padding: 2rem;
@@ -321,8 +335,17 @@ header {
     border-radius: 10rem;
     text-align: center;
     margin-top: 1rem;
-    background-color: var(--color-2-2);
+    background-color: var(--color-2-1);
     color: var(--color-1);
+    position: relative;
+} #proposta details a:after {
+    content: url(assets/blank_target.svg);
+    width: 1.1rem;
+    height: 1.1rem;
+    position: absolute;
+    right: 1.1rem;
+    top: 0;
+    transform: translateY(60%);
 }
 
 #features01 {
@@ -340,15 +363,6 @@ header {
     border-width: 0.3rem;
 } .dog01 {
     display: none;
-}
-
-
-#graph_iframe {
-    width: 90%;
-    height: 62vh;
-    margin: 2rem auto;
-    display: block;
-    border-radius: 1rem;
 }
 
 
@@ -397,10 +411,17 @@ header {
     justify-content: center;
 }#data_section > div:last-child {
     margin: 0rem 0 3rem 0;
+} #data_section > div {
+    margin-bottom: 2rem;
+} #data_section iframe {
+    width: 90%;
+    height: 40rem;
+    margin: 2rem 0 4rem 0;
 }
 
-
-.real_time {
+#real_time {
+    margin-top: 2rem;
+} .real_time {
     border: 3px solid var(--color-2-1);
     border-radius: 10rem;
     padding: 0 0 0.4rem 0;
@@ -441,11 +462,6 @@ header {
     color:var(--color-1);
 }
 
-#social_section iframe {
-    transform: scale(0.90);
-    transform-origin: top;
-}
-
 .link_tree {
     margin: 2rem auto;
     width: 100%;
@@ -480,6 +496,7 @@ header {
     margin-bottom: 1rem;
 } #telegram_window a {
     display: flex;
+    background: var(--telegram);
 } #telegram_window .divisor {
     margin: 2rem auto;
     width: 100%;
@@ -502,17 +519,11 @@ header {
 }
 
 footer {
-    background: var(--color-3);
+    background: var(--color-0-1);
     color: var(--color-2-2);
     text-align: center;
     padding: 1rem 0;
     font-size: 1rem;
-}
-
-#dogbg {
-    display: block;
-    width: 70%;
-    margin: 4rem 0 0 auto;
 }
 
 #parceria_section {
@@ -544,7 +555,7 @@ footer {
 }
 
 #email_window {
-
+    padding: 2rem 0 0 0;
 } form {
     margin: 1rem auto 3rem auto;
     width: 80%;
@@ -558,12 +569,11 @@ footer {
 } input {
 } #my-form-button {
     background: var(--color-2-1);
-    box-shadow: inset 0 -1rem 1.8rem var(--color-2);
     border: none;
     padding: 0.4rem 0;
     font-size: 1.8rem;
     color: var(--color-0);
-    border-radius: 1rem;
+    border-radius: 0.4rem;
     cursor: pointer;
 } #my-form-button:hover {
     filter:brightness(1.05);
@@ -601,17 +611,42 @@ section h5 {
 
 
 #roadmad_section {
-    
+    background: var(--color-3);
+    padding: 3rem 0;
+    background-image: url(assets/arrow_up.svg);
+    background-attachment: fixed;
 } #roadmad_section img {
     margin: 2rem 0 4rem 0;
 }
 
 
+#link_tree_02 {
+    padding: 5rem 0 0 0;
+    background: var(--color-1);
+} #link_tree_02 a {
+    display: block;
+    text-align: center;
+    background: var(--color-0-1);
+    margin: 1rem auto;
+    padding: 1rem 2rem;
+    border-radius: 0.6rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    width: 70%;
+} #link_tree_02 a:hover {
+    background: var(--telegram);
+
+}
+
+#dog01 {
+    display: none;
+}
 
 
-
-
-
+.bigger_title {
+    font-size: 2rem;
+}
 
 
 
@@ -666,21 +701,19 @@ section h5 {
     
 
     body .mobile_hidden {
-        display:unset;
+        display: flex;
     }
 
     header {
-        width: 24.1rem;
-        height: 5rem;
+        height: unset;
         left: 0;
         right: 0;
         margin: 0 auto;
-        border-radius: 0 0 2.5rem 2.5rem;    
         background: none;
         box-shadow: none;
         align-items: flex-end;
-        background: var(--color-2-4);
-        padding-bottom: 0.6rem;
+        background: rgb(157 245 255 / 60%);
+        backdrop-filter: blur(8px);
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     } header::after, header::before {
         content: url(assets/border-radius-inverted.svg);
@@ -696,13 +729,15 @@ section h5 {
         transform: translateX(97%) scaleX(-1);
     }
 
+    #loading_bg {
+        background-size: 70rem;
+    }
+
     #intro {
         height: 86vh;
-        background-image: url(assets/bg02.jpg);
-        background-position: left;
-        background-size: cover;
-        background-repeat: no-repeat;
+        background-size: 74rem;
         background-attachment: fixed;
+        box-shadow: none;
     } #businessdoggo {
         width: 40vw;
         min-width: 43rem;
@@ -712,9 +747,9 @@ section h5 {
         left: calc(30vw - 26rem);
     } #intro article {
         position: absolute;
-        right: calc(25vw - 20rem);
+        right: calc(18vw - 18rem);
         top: 7rem;
-        height: 33rem;
+        height: 32rem;
     } #rotating_circle {
         left: -80rem;
         bottom: -40rem;
@@ -723,10 +758,13 @@ section h5 {
     }
 
     h1 {
-        font-size: 4rem;
+        font-size: 4.5rem;
+        text-shadow: none;
+        letter-spacing: 2px;
     } #intro h2 {
         font-size: 1.4rem;
-        width: 75%;
+        width: 55%;
+        text-shadow: none;
     }
 
     #know_more {
@@ -734,14 +772,14 @@ section h5 {
     }
 
     #proposta {
-        padding: 6rem 0 9rem 0;
+        padding: 6rem 0;
         margin: 0;
         background-size: calc(100%/29);
     } .highlight_txt {
         font-size: 2.5rem;
         font-weight: 400;
         max-width: 62vw;
-        margin: 0 auto 4rem auto;
+        margin: 0 auto 2rem auto;
         font-weight: 300;
         padding: 0;
     }
@@ -754,12 +792,12 @@ section h5 {
         top: 0;
     }
 
-    #intro .link_tree {
-        color: var(--color-0-1);
-        margin: -1rem 0 0 0;
-        gap: 0;
-        display: flex;
-        flex-flow: column;
+    #intro .pancakeswap {
+
+    } #intro .pancakeswap {
+        
+    } #intro .columns {
+
     }
 
     .defaultBT, summary {
@@ -771,6 +809,7 @@ section h5 {
         box-shadow: 0 0.4rem 2rem -0.6rem var(--color-5);
         border: 0.4rem solid white;
         margin: 0;
+        transform: translateY(50%);
     } .defaultBT img, summary img {
         transform: scale(1);
     }
@@ -798,19 +837,21 @@ section h5 {
         border-radius: 1rem;
         display: none;
     } #proposta .description {
-        background: rgba(255,255,255,0.5);
+        background: var(--color-2-1);
         font-weight: 500;
         padding: 2rem 2rem 0rem 2rem;
         border-radius: 0 0 1rem 1rem;
         box-shadow: 0 1rem 2rem -1.3rem var(--color-5);
+        color: white;
     }
 
     #proposta details {
         margin: 2rem 1rem;
     } #proposta details a {
-        transition:background-color 0.2s ease;
+        transition:transform 0.2s ease;
+        background-color: rgba(255,255,255,0.2);
     } #proposta details a:hover {
-        background-color: var(--telegram-2);
+        transform:scale(1.05);
     } #proposta .last_details .description {
         border-radius: 0 0 1rem 1rem;
     }
@@ -819,7 +860,6 @@ section h5 {
     #features01 {
         font-size: 2.2rem;
         position: relative;
-        box-shadow: inset 0 0 6rem -3rem;
         padding: 4rem 2rem 0 2rem;
     } .dog01 {
         display: unset;
@@ -834,7 +874,7 @@ section h5 {
         width: 80%;
         min-width: 70rem;
     } #data_section .real_time {
-        width: 60%;
+        width: 28rem;
         margin: 0 auto 2rem auto;
     } #data_section article {
         margin: 2rem 1rem;
@@ -845,6 +885,7 @@ section h5 {
         align-items: center;
         text-align: center;
         padding: 0 3rem 1.5rem 3rem;
+        background: rgba(225,235,255,0.9);
     } #data_section .grid_2_column {
         display: flex;
         flex-flow: row wrap;
@@ -860,11 +901,7 @@ section h5 {
     }
 
     footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 1;
+        width:100%;
         padding: 0.6rem 0;
     }
 
@@ -878,11 +915,6 @@ section h5 {
         gap: 1rem;
     }
 
-
-    #dogbg {
-        width:30%;
-        display: none;
-    }
 
     #parceria_section a {
         height: 10rem;
@@ -921,4 +953,44 @@ section h5 {
         width: 50rem;
         min-width: 60vw;
     }
+
+    #email_window {
+        padding: 5rem 0 0 0;
+        background: var(--color-1);
+    }
+
+    #data_section iframe {
+        width: 28rem;
+        height: 44rem;
+    }
+
+    #link_tree_02 a {
+        width: 30%;
+        margin: 0;
+        font-size: 1.2rem;
+    } #link_tree_02 div {
+        display: flex;
+        flex-flow: row wrap;
+        grid-gap: 1.2rem;
+        margin: 2rem auto 0 auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    #dog01 {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        width: 24%;
+    }
+
+
+    .bigger_title {
+        font-size: 2.4rem;
+    }
+    
+
 }

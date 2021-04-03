@@ -20,7 +20,7 @@ document.onreadystatechange = function () {
             if(document.documentElement.scrollTop > (window.innerHeight /3)) {
                 header.style.transform = 'translateY(0)';
             } else {
-                header.style.transform = 'translateY(-100%)';
+                header.style.transform = 'translateY(-150%)';
             }
         }
 

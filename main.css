@@ -26,9 +26,6 @@
     align-items: center;
     transition: transform 0.5s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateY(0);
-    background-image: url(assets/bg.jpg);
-    background-size: 55rem;
-    background-position: center;
 } #loading_bg img {
     width: 24vh;
     animation: loading_img 0.7s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate forwards;
@@ -729,12 +726,8 @@ section h5 {
         transform: translateX(97%) scaleX(-1);
     }
 
-    #loading_bg {
-        background-size: 70rem;
-    }
-
     #intro {
-        height: 86vh;
+        height: 91vh;
         background-size: 74rem;
         background-attachment: fixed;
         box-shadow: none;
@@ -748,7 +741,7 @@ section h5 {
     } #intro article {
         position: absolute;
         right: calc(18vw - 18rem);
-        top: 7rem;
+        top: 9rem;
         height: 32rem;
     } #rotating_circle {
         left: -80rem;
